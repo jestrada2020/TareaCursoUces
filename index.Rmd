@@ -1,0 +1,760 @@
+---
+title: "Unidad Uno"
+author: "John J Estrada Álvarez"
+date: "2023-09-15"
+
+output:
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float: TRUE
+    highlight: tango
+csl: apa.csl
+bibliography: mi_biblio.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Objetivo general
+
+
+Cultivar el pensamiento lógico y deductivo resolviendoo problemas matemáticos que demandan la aplicación de leyes y principios de la lógica matemática. Esta actividad fomenta la capacidad de razonar con creatividad y precisión.
+
+# Temas de la unidad uno 
+
+<!-- **Sistema numérico de la línea Real** -->
+
+* Concepto de conjunto y sus propiedades básicas
+* Conjuntos numéricos y su clasificación
+* Concepto de distancia en la linea real
+* Desigualdades y sus propiedades
+* concepto de valor absoluto y sus propiedades
+* Desigualdades con valor absoluto
+
+
+
+## Teoría de conjuntos
+
+### Definición de conjunto
+
+Un **conjunto** es una colección bien definida de objetos, llamados sus elementos. Los conjuntos se simbolizan con letras mayúsculas $A$, $B$, $...$ Los objetos que componen el conjunto se denominan elementos y se denotan con letras minúsculas $a, b, ...$  [Tomado de [@zill2012algebra] pág $21$]
+
+
+
+
+### Descripción por extensión y por comprensión
+
+
+Para definir un **conjunto por extensión**, se enumeran todos sus elementos separándolos por comas y luego se encierran entre llaves. 
+
+Para escribir un **conjunto por comprensión** se elige un elemento arbitrario $x$ y se señala que cumple la propiedad $P(x)$. Finalmente, se encierra toda la expresión entre llaves. [Tomado de [@zill2012algebra] pág $22$]
+`
+
+$$
+A=\{ x | x \ \ \text{cumple la propiedad} \ \ P(x)   \}
+$$
+
+
+
+
+### Igualdad de conjuntos
+
+**Definición**
+
+
+Diremos que dos conjutnos $A$ y $B$ son iguales si tienen los mismos elementos. Para indicar que $A$ y $B$ son iguales se escribe:[Tomado de [@zill2012algebra] pág $22$]
+
+
+
+
+$$
+A=B
+$$
+
+
+
+**Nota:**
+
+
+Todo conjunto que posee un número finito de elementos; se llaman **conjuntos finitos**.
+  
+Todo conjunto que no tiene un número finito de elemenos se llaman **conjunto infinito**.
+
+[Tomado de [@zill2012algebra] pág $23$]
+
+
+
+
+### Cardinalidad de conjuntos
+
+
+**Definición**
+
+El número de elementos de un conjunto finito es lo que se llama la **cardinalidad** de dicho conjunto. La cardinalidad de un conjunto finito $A$ se denota por: [Tomado de [@zill2012algebra] pág $24$]
+
+
+
+$$
+Card(A) \ \ \ \text{ó}  \ \ \ |A|
+$$
+
+### Conjuntos equipotentes
+
+**Definición**
+
+
+Dos conjuntos finitos $X$ y $Y$ se dicen ser **equipotentes** si tienen exactamente el mismo número de elementos. [Tomado de [@zill2012algebra] pág $24$]
+
+
+
+
+### Conjunto vacío
+
+**Definición**
+
+
+Un conjunto se dice **vacío** si no posee elementos. El conjunto vacío se denota como:
+
+
+$$
+\{ \} \ \ \ \text{ó}  \ \ \ \Phi
+$$
+
+### Conjunto universal
+
+**Definición**
+
+
+El conjunto **universal** se define como el conjunto que posee todos los elementos de todos los conjunots, y se denota como:[Tomado de [@zill2012algebra] pág $25$]
+
+
+
+
+$$
+\text{Conjunto universal:} \ \ \ U
+$$
+
+
+### Video sobe la historia de los diagramas de John Venn
+
+
+
+Este video es una breve historia sobre el autor de los [diagramas de John Venn](https://app.visla.us/clip/1152501242652549120) en la teoría de conjuntos y en el idioma español
+
+
+<!-- <iframe width="560" height="315" src="https://app.visla.us/clip/1152501242652549120" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+
+            
+<br></br>
+
+
+
+## Operaciones entre conjuntos
+
+### Inclusión de conjuntos
+
+**Definición**
+
+
+Si cada elemento de un conjunto $A$ es también elemento de un conjunto $B$, entonces se dice que $A$ es un subconjunto de $B$. Se dice también que $A$ está contenido en $B$ o que $B$ contiene a $A$. La relación de subconjunto se denota como: [Tomado de [@zill2012algebra] pág $25$]
+
+
+$$
+A \subset B  \ \ \ \text{ó}  \ \ \ B \supset A
+$$
+
+
+$$
+A \subset B \ \  \ \text{si y sólo si  } \ \  \  \ \text{Para todo } x,  \ \  \ \ \  x \in A \ \  \ \text{entonces } \ \  \  x \in B
+$$
+
+
+
+```{tikz, SubConjuntos2A, echo=FALSE, message=FALSE,  warning=FALSE, fig.cap=" Inclusión de conjuntos", fig.align="center", out.width = "26%"}
+\begin{tikzpicture}
+% dibujo un círculo sin relleno
+\draw[red] (0,0) ellipse (2.5 and 1.5);
+% dibujo un circulo con relleno
+\draw[blue,fill=blue!25] (0,-0.5) circle (0.5cm);
+\draw (0.6,1) node[text=black,above] {$B$};
+\draw node [text=black,below left] {$A$};
+\draw (-3,-2) rectangle (3,2);
+\draw (-2.5,1.7) node {$U$};
+\end{tikzpicture}
+```
+
+
+
+
+
+### Unión de conjuntos
+
+**Definición**
+
+
+La unión de dos conjuntos $A$ y $B$ consta de todos los elementos que pertenecen a $A$ o a $B$. La unión de $A$ y $B$ se denota por $A \cup B$. [Tomado de [@zill2012algebra] pág $31$]
+
+
+
+
+$$
+A \cup B = \{ x | x \in A \ \text{o} \ x \in B\}
+$$
+
+
+
+
+
+```{tikz, Conjuntos2A, echo=FALSE, message=FALSE,  warning=FALSE, fig.cap=" Unión de conjuntos", fig.align="center", out.width = "26%"}
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+% Set A or B
+\begin{tikzpicture}
+    \draw[filled] \firstcircle node {$A$}
+                  \secondcircle node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+\draw (-3,-3) rectangle (4,3);
+\draw (-2.5,2.7) node {$U$};
+\end{tikzpicture}
+
+```
+
+
+<br></br>
+
+### Video unión entre conjuntos
+
+Link para ver y escuchar el concepto de [unión entre dos conjuntos](https://app.visla.us/clip/1152205974044434432).
+            
+<br></br>
+
+
+#### Propiedades de la Unión
+
+
+
+\[
+\begin{matrix}
+(a) & A \cup B = B \cup A & \text{propiedad conmutativa}  \\
+(b) & (A \cup B) \cup C = A \cup (B \cup C) & \text{propiedad asociativa}  \\
+(c) & A \cup \Phi = A  & \text{propiedad de la existencia para la identidad}  \\
+(d) & A \cup U = U & \text{propiedad de la existencia del conjunto absorbente}  
+\end{matrix}
+\]
+
+
+<br></br>
+
+
+### Intersección de conjuntos
+
+
+**Definición**
+
+
+La intersección de dos conjuntos $A$ y $B$ consta de todos los elementos que pertenecen a $A$ y a $B$. La intersección de $A$ y $B$ se denota por $A \cap B$. [Tomado de [@zill2012algebra] pág $30$]
+
+
+
+$$
+A \cap B = \{ x | x \in A \ \text{y} \ x \in B\}
+$$
+
+
+
+
+
+
+```{tikz, Conjuntos2E, echo=FALSE, message=FALSE,  warning=FALSE, fig.cap=" Intersección de conjuntos ", fig.align="center", out.width = "26%"}
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+\begin{tikzpicture}
+    \begin{scope}
+        \clip \firstcircle;
+        \fill[filled] \secondcircle;
+    \end{scope}
+    \draw[outline] \firstcircle node {$A$};
+    \draw[outline] \secondcircle node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+\draw (-3,-3) rectangle (4,3);
+\draw (-2.5,2.7) node {$U$};
+\end{tikzpicture}
+```
+
+
+
+
+
+
+
+<br></br>
+
+
+#### Propiedades de la Intersección
+
+\[
+\begin{matrix}
+(a) & A \cap B = B \cap A & \text{propiedad conmutativa}  \\
+(b) & (A \cap B) \cap C = A \cap (B \cap C) & \text{propiedad asociativa}  \\
+(c) & A \cap U = A  & \text{propiedad de la existencia para la identidad}  \\
+(d) & A \cap \Phi = \Phi & \text{propiedad de la existencia del conjunto absorbente}  
+\end{matrix}
+\]
+
+
+
+<br></br>
+
+
+
+#### Propiedades de la unión y la intersección
+
+\[
+\begin{matrix}
+(a) & A \cup (B \cap C) = (A \cup B) \cap (A \cup C) & \text{prop dist de la unión respecto a la intersección}  \\
+(b) & A \cap (B \cup C) = (A \cap B) \cup (A \cap C) & \text{prop dist de la intersección respecto a la unión}
+\end{matrix}
+\]
+
+
+
+<br></br>
+
+
+
+### Diferencia entre dos conjuntos
+
+**Definición**
+
+
+La diferencia de dos conjuntos $A$ y $B$ consta de todos los elementos que pertenecen a $A$ y no pertenecen a $B$. La diferencia de $A$ y $B$ se denota por $A - B$. [Tomado de [@zill2012algebra] pág $34$]
+
+
+
+
+$$
+A - B = \{ x | x \in A \ \text{y} \ x \notin B\}
+$$
+
+
+
+
+
+
+
+
+```{tikz, Conjuntos2C, echo=FALSE, message=FALSE, fig.cap=" Diferencia de conjuntos ", fig.align="center", out.width = "26%"}
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+% Set A but not B
+\begin{tikzpicture}
+    \begin{scope}
+        \clip \firstcircle;
+        \draw[filled, even odd rule] \firstcircle node {$A$}
+                                     \secondcircle;
+    \end{scope}
+    \draw[outline] \firstcircle
+                   \secondcircle node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A - B$};
+\draw (-3,-3) rectangle (4,3);
+\draw (-2.5,2.7) node {$U$};
+\end{tikzpicture}
+```
+
+
+
+
+
+
+$$
+B - A = \{ x | x \in B \ \text{y} \ x \notin A\}
+$$
+
+
+
+
+```{tikz, Conjuntos2B, echo=FALSE, message=FALSE, fig.cap=" Diferencia de conjuntos ", fig.align="center", out.width = "26%"}
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+% Set B but not A
+\begin{tikzpicture}
+    \begin{scope}
+        \clip \secondcircle;
+        \draw[filled, even odd rule] \firstcircle
+                                     \secondcircle node {$B$};
+    \end{scope}
+    \draw[outline] \firstcircle node {$A$}
+                   \secondcircle;
+    \node[anchor=south] at (current bounding box.north) {$B - A$};
+\draw (-3,-3) rectangle (4,3);
+\draw (-2.5,2.7) node {$U$};
+\end{tikzpicture}
+
+```
+
+
+
+
+
+
+
+
+
+### Complemento de un conjunto
+
+**Definición**
+
+
+El complemento de un conjunto $A$ consta de todos los elementos del universo $U$, y que no pertenecen a $A$. El complemento de $A$ se denota por $A^{c}$. [Tomado de [@zill2012algebra] pág $34$]
+
+
+
+$$
+A'=A^{c} = \{ x | x \notin A \}
+$$
+
+
+
+
+
+```{tikz, Complemento0, echo=FALSE, message=FALSE, fig.cap=" Complemento de un conjunto ", fig.align="center", out.width = "26%"}
+\begin{tikzpicture}
+\draw[black, fill=blue!25] (-3,-2) rectangle (3,2);
+\draw[black,fill=white!25] (0,0) circle (1cm);
+\draw (1.6,1.2) node[text=black,above] {$A^{c}$};
+\draw node [text=black,below left] {$A$};
+\draw (-2.5,1.7) node {$U$};
+\end{tikzpicture}
+```
+
+
+
+
+
+
+<br></br>
+
+
+
+### Diferencia simétrica de dos conjuntos
+
+**Definición**
+
+
+La diferencia simétrica entre dos conjuntos $A$ y $B$ se define como el conjunto de todos los elementos del universo $U$, que pertenecen a $(A-B) \cup (B-A)$.
+
+
+
+
+
+```{tikz, Conjuntos2D, echo=FALSE, message=FALSE, fig.cap=" Diferencia simétrica de conjuntos ", fig.align="center", out.width = "26%"}
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+\begin{tikzpicture}
+    \draw[filled, even odd rule] \firstcircle node {$A$}
+                                 \secondcircle node{$B$};
+    \node[anchor=south] at (current bounding box.north) {${A \bigtriangleup B}$};
+\draw (-3,-3) rectangle (4,3);
+\draw (-2.5,2.7) node {$U$};
+\end{tikzpicture}
+```
+
+
+
+<br></br>
+
+
+
+
+
+
+
+### Propiedades del algebra de conjuntos
+
+
+
+\begin{equation}
+\begin{matrix}
+\text{Leyes de idemponentes} & &\\
+(1a) \ \ A \cup A = A & (1b) \  \  A \cap A = A &\\
+& & &\\
+
+\text{Leyes asociativas} & &\\
+(2a) \ \ (A \cup B) \cup C = A \cup (B \cup C) & (2b) \  \  (A \cap B) \cap C = A \cap (B \cap C) &\\
+& & &\\
+
+\text{Leyes conmutativas} & &\\
+(3a) \ \ A \cup B = B \cup A & (3b) \ \ A \cap B = B \cap A &\\
+& & &\\
+
+\text{Leyes distributivas} & &\\
+(4a) \ \ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) & (4b) \ \ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) &\\
+& & &\\
+
+\text{Leyes de identidad y absorción} & &\\
+(5a) \ \ A \cup \Phi = A  & (5b) \ \ A \cap U = A &\\
+(6a) \ \ A \cup U = U  & (6b) \ \ A \cap \Phi = \Phi &\\
+& & &\\
+
+\text{Ley involutiva} & &\\
+(7a) \ \ (A^{c})^{c}=A & &\\
+& & &\\
+
+\text{Leyes del complementario} & &\\
+(8a) \ \ A \cup A^{c} = U  & (8b) \ \ A \cap A^{c} = \Phi &\\
+(9a) \ \ U^{c}  = \Phi  & (9b) \ \ {\Phi}^{c} = U \\
+& & &\\
+
+\text{Leyes de De Morgan} & &\\
+(10a) \ \ (A \cup B)^{c}  = A^{c} \cap B^{c}  & (10b) \ \ (A \cap B)^{c} = A^{c}\cup B^{c}
+\end{matrix}
+\end{equation}
+
+<br></br>
+<br></br>
+
+
+## Actividad Geogebra: Operaciones con conjuntos
+
+A partir de los conceptos anteriores seleccionar $A\cup B$, $A\cap B$ en la herramienta geogebra y determinar:
+
+<br></br>
+
+* si $A \cup B = A\cap B$
+
+* si $A \cup B = C\cap B$
+
+* si $A \cup B = C - A$
+
+* si $A \cup B = B - C$
+
+
+<br></br>
+<br></br>
+
+
+Esta es una aplicación que muestra graficamente las operaciones entre tres conjuntos, el Autor:LikitMaths (https://www.geogebra.org/m/QWS4wDtE) las elaboro usando geogebra.
+
+<!-- https://www.geogebra.org/m/QWS4wDtE -->
+
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<div id="ggb-elementConjuntosA1"></div> 
+<script>  
+       var ggbAppConjuntosA1 = new GGBApplet({"material_id":"QWS4wDtE",
+       "width": 800,
+       "height": 400,
+       "showToolBar": false,
+       "showAlgebraInput": false,
+       "showMenuBar": false },
+       true);
+       
+         window.addEventListener("load", function() {  
+           ggbAppConjuntosA1.inject('ggb-elementConjuntosA1');
+      });
+</script>
+
+
+<br></br>
+<br></br>
+
+
+
+## Ejemplo1 - Po Shen Loh 
+
+Si conocemos que el cardinal del conjunto universal es 34, podemos deducir una ecuación cuadratica que surge al igualar la cardinalidad a partir de dos formas. 
+
+
+$$
+\text{información que proporciona el enunciado } \ \ 34 = 7x^2+21x+6 \ \ \text{cardinalidad al sumar cada uno de los cardinales en la figura.}
+$$
+
+
+Y usando la técnica (ó [métodfo de Po Shen Loh](https://jestradacasasept2022.shinyapps.io/MetodoPoShenLohV3/)) obtener:
+
+
+*  El cardinal de $B - A$
+
+*  El cardinal de $C - B$
+
+```{tikz, FigEjConjunto2, echo=FALSE, message=FALSE, fig.cap="Figura 1: ejemplo de operaciones entre conjuntos ", fig.align="center", out.width = "36%"}
+\def\firstcircle{(90:1.75cm) circle (2.5cm)}
+\def\secondcircle{(210:1.75cm) circle (2.5cm)}
+\def\thirdcircle{(330:1.75cm) circle (2.5cm)}
+ 
+    \begin{tikzpicture}
+      \draw (-5,-4) rectangle (5,5);
+      \begin{scope}
+    \clip \secondcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \draw \firstcircle ;
+      \draw \secondcircle ;
+      \draw \thirdcircle ;
+     
+    \node at (-4,5.5) {\LARGE\textbf{U}};
+    \node at (-4,1) {\LARGE\textbf{A}};
+    \node at (2.1,4) {\LARGE\textbf{B}};
+    \node at (3.5,-3) {\LARGE\textbf{C}};
+    \draw (0,3) node {\LARGE\textbf{$3x^2+6x$}};
+    \draw (1.3,0.7) node {\LARGE\textbf{2x}};
+    \draw (0,0) node {\LARGE\textbf{3x}};
+    \draw (0,-1.5) node {\LARGE\textbf{5x}};
+    \draw (2,-1.5) node {\LARGE\textbf{$3x^2$}};
+    \draw (-1.4,0.7) node {\LARGE\textbf{4x}};
+    \draw (-2.5,-1.5) node {\LARGE\textbf{$x^2+x$}};
+    \draw (-4,-3.5) node {\LARGE\textbf{6}};
+\end{tikzpicture}
+```
+
+
+
+
+<br></br>
+<br></br>
+
+
+## Ejemplo2 
+
+
+De un grupo de 80 personas de las cuales se tiene información de que 27 leían la revista A, pero no leían la revista B; 26 leían la revista B, pero no la C; 19 leían C pero no A; 2 las tres revistas mencionadas. ¿Cúantos preferían otras revistas?
+
+
+
+
+
+```{tikz, ConjuntosProblema0,  echo=FALSE, message=FALSE, fig.cap="Figura 2: ejemplo de operaciones entre conjuntos ", fig.align="center", out.width = "36%"}
+\def\firstcircle{(90:1.75cm) circle (2.5cm)}
+\def\secondcircle{(210:1.75cm) circle (2.5cm)}
+\def\thirdcircle{(330:1.75cm) circle (2.5cm)}
+ 
+    \begin{tikzpicture}
+      \draw (-5,-4) rectangle (5,5);
+      \begin{scope}
+    \clip \secondcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \draw \firstcircle ;
+      \draw \secondcircle ;
+      \draw \thirdcircle ;
+     
+    \node at (-4,5.5) {\LARGE\textbf{U}};
+    \node at (-4,1) {\LARGE\textbf{A}};
+    \node at (2.1,4) {\LARGE\textbf{B}};
+    \node at (3.5,-3) {\LARGE\textbf{C}};
+    \draw (0,3) node {\LARGE\textbf{a}};
+    \draw (1.3,0.7) node {\LARGE\textbf{b}};
+    \draw (0,0) node {\LARGE\textbf{c}};
+    \draw (0,-1.5) node {\LARGE\textbf{f}};
+    \draw (2,-1.5) node {\LARGE\textbf{g}};
+    \draw (-1.4,0.7) node {\LARGE\textbf{d}};
+    \draw (-2.5,-1.5) node {\LARGE\textbf{e}};
+    \draw (-4,-3.5) node {\LARGE\textbf{X=?}};
+\end{tikzpicture}
+```
+
+
+
+A partir de la figura 2, y usando los conceptos de cardinalidad para un conjunto se logra obtener el sistema de ecuaciones:
+
+
+\begin{equation}
+\begin{split}
+
+(1)\ \ \ 80 & = & \ \ a + b + c + d + e + f + g + X \\
+
+(2)\ \ \ 27 & = & \ \  e + f \ \ \ \text{leían la revista A pero no la B}\\
+
+(3)\ \ \ 26 & = & \ \  a + d \ \ \ \text{leían la revista B pero no la C}\\
+
+(4)\ \ \ 19 & = & \ \  b + g \ \ \ \text{leían la revista C pero no la A}\\
+
+(5)\ \ \ 2 & = & \ \  c \ \ \ \text{leían las tres revistas}\\
+
+& & \text{sustituyendo } (2) , (3), (4), (5) \ \ \text{en } \ \ (1) \ \ \text{se tiene:}\\
+
+80 & = & \ \  (e + f) + (a + d) + (b + g) + c + X\\
+
+80 & = & \ \  27 + 26 + 19 + 2 + X\\
+
+80 & = & \ \  74 + X\\
+
+X & = & \ \  80 - 74\\
+
+X & = & \ \  6
+
+\end{split}
+\end{equation}
+
+
+
+**Respuesta: ** Son 6 el número de personas que preferían leer otras revistas.
+
+
+
+<br></br>
+<br></br>
+
+
+## Actividad evaluativa para el primer tema de la unidad uno
+
+```{r, echo=FALSE}
+library(knitr)
+knitr::include_app("https://johnucesv2oficina2023.shinyapps.io/parcialSIMO02AB/",height = "2000px")
+```
+
+
+# Referencias
